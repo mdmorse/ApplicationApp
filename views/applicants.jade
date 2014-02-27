@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .container
+        .jumbotron.text-center
+            h1 Applicant Information
+        a.active(href = "/")
+                .btn.btn-default Home
+                br
+        for applicant in applicants
+            ul#applications.list-unstyled 
+                a(href = "/applicants/single-applicant/#{applicant._id}")
+                    h2= applicant.name
+                p.h4 Bio 
+                    li= applicant.bio
+                p.h4 Skills    
+                    li= applicant.skills
+                p.h4 Years
+                    li= applicant.years
+                p.h4 Why   
+                    li= applicant.why
+
+                a(href = "/applicants/delete/#{applicant._id}")
+                    .btn.btn-danger Delete!

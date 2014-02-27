@@ -1,0 +1,18 @@
+body {
+  font: 14px "Helvetica-Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+#applications{
+	border:#EEEEEE solid 1px;
+	border-radius: 5px;
+	padding: 15px;
+	margin: 30px 0px 0px 0px;
+	/*margin-top: 10px;*/
+}
+#applications .btn-danger{
+	margin: 5px 0px 0px 0px;
+}
+

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .container
+        .jumbotron.text-center
+            h1 Applicant Profile
+        a.active(href = "/")
+                .btn.btn-default Home
+        h1= singleApp.name
+        p= singleApp.bio
+        p= singleApp.skills
+        p= singleApp.years
+        p= singleApp.why        
+        
+        a(href = "/applicants/delete/#{singleApp._id}")
+                    .btn.btn-danger Delete!
+        .panel-footer
+            h1 footer

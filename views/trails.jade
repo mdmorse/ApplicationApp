@@ -16,24 +16,17 @@ block content
                 .glyphicon.glyphicon-home
             a.btn.btn-default(href= '/trail-form') Add a Trail
             a.btn.btn-default(href= '/trails') All Trails
+                br
+        for trail in trails
+            ul#trails.list-unstyled 
+                    a.h1.location-text= trail.name
+                .description    
+                    p.h2 Trail Description 
+                        li= trail.description
+                    p.h2 Trail location    
+                        li= trail.location
 
-
-        //-     for trail in trails
-        //-         .btn.btn-default.location-button= trail
-        //- .container-content
-        //-     .row
-        //-         .col-sm-12
-        //-             .clear
-        //-                 .main-trail-container
-        //-                     .trail-info-wrapper 
-
-
-
-    
-
-
-
-
-
-
-
+                    a(href = "/trails/delete/#{trail._id}")
+                        .btn.btn-danger Romove
+                    a(href = "/trails/single-trail/#{trail._id}")
+                        .btn.btn-success Directions

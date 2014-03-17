@@ -5,7 +5,7 @@ block content
         .logo-bar 
             .img-wrapper
                 h1 
-                    span#location-slide
+                    span#location-slide Trail Rate
             .img-wrapper
                 h1 
                     span#logo-slide Trail Rate 
@@ -16,24 +16,11 @@ block content
                 .glyphicon.glyphicon-home
             a.btn.btn-default(href= '/trail-form') Add a Trail
             a.btn.btn-default(href= '/trails') All Trails
-
-
-        //-     for trail in trails
-        //-         .btn.btn-default.location-button= trail
-        //- .container-content
-        //-     .row
-        //-         .col-sm-12
-        //-             .clear
-        //-                 .main-trail-container
-        //-                     .trail-info-wrapper 
-
-
-
-    
-
-
-
-
-
-
-
+        p= singleTrail.description
+        p= singleTrail.location
+        h2= singleTrail.region     
+        
+        a(href = "/trails/delete/#{singleTrail._id}")
+                    .btn.btn-danger Remove
+        a(href = "/trails")
+                    .btn.btn-info Back to List

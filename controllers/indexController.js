@@ -1,34 +1,30 @@
-var applicantModel = require('../models/applicantsModel.js')
+var trailModel = require('../models/trailsModel.js')
 
-var applicationController = module.exports ={
+var trailController = module.exports ={
 
 	list: function(req,res){
-		applicantModel.find({}, function(err,docs){
-			res.render('applicants',{applicants:docs
+		trailModel.find({}, function(err,docs){
+			res.render('trails',{trails:docs
 		});
 	}); 	 	
 },
 	create: function(req,res){
-		var applicant = new applicantModel(req.body);
-		applicant.save(function(err,doc){
-			res.render('success')
-	
+		var trail = new trailModel(req.body);
+		trail.save(function(err,doc){
+			res.render('success')	
 	});
-
 },
 	remove: function(req,res){
-		var appId = req.params.id;
-		applicantModel.remove({_id:appId},function(err,doc){
-			res.redirect('/applicants');
+		var trailId = req.params.id;
+		trailModel.remove({_id:trailId},function(err,doc){
+			res.redirect('/trails');
 	});
-
 },
 	get: function(req,res){
-		var appId = req.params.id;
-		applicantModel.findById(appId, function(err,docs){
-			res.render('single-applicant',{singleApp:docs});
+		var trailId = req.params.id;
+		trailModel.findById(trailId, function(err,docs){
+			res.render('single-trail',{singleTrail:docs});
 	});
-
 }
 
 

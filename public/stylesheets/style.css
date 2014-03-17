@@ -5,14 +5,147 @@ body {
 a {
   color: #00B7FF;
 }
-#applications{
+#add-form{
 	border:#EEEEEE solid 1px;
 	border-radius: 5px;
 	padding: 15px;
 	margin: 30px 0px 0px 0px;
 	/*margin-top: 10px;*/
 }
-#applications .btn-danger{
+#trails .btn-danger{
 	margin: 5px 0px 0px 0px;
 }
+
+body {
+  padding: 0px;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+ 
+}
+.clear{
+	clear: both;
+}
+.container-content{
+ 	width: 1180px;
+ 	margin: auto;
+ }
+ .container{
+ 	overflow: hidden;
+ }
+/* .container-fluid{
+	padding:20px;
+}*/
+.description{
+ 	padding:10px;
+ 	margin: 20px;
+ 	display: none;
+ 	border:1px solid white;
+ 	overflow: hidden;
+ 	position: relative;
+ }
+
+
+header{
+	widows: 100%;
+	background-color: #4E5D6C;
+	height: 25px;
+	display: block;
+	/*border-bottom: white 1px solid;*/
+}
+h1{
+	font-size: 24em;
+}
+h1 span{
+	position: absolute;
+	width:100%;
+	top:200px;
+	left:0px;
+	width:25%;
+	margin-left: 30px;
+	letter-spacing: -1px;  
+   	background: rgb(0, 0, 0); /* fallback color */
+   	background: rgba(0, 0, 0, 0.7);
+   	padding: 10px; 
+}
+
+img{
+	width: 100%;
+	height: auto;
+	left: 100px;
+	top:0px;
+
+}
+img.icon{
+ 	width: 30px;
+ 	height:30px;
+}
+.image-wrapper{
+	width:100%;
+	position: relative;
+	margin-top: 10px;
+}
+#location-slide{
+	display: none;
+}
+.logo-bar{
+	margin-top:-21px;
+	overflow: hidden;
+	height: 350px;
+	position: relative;
+	border-bottom: 1px solid white;
+	box-shadow: 
+}
+.main-trail-container{
+	display: none;
+	padding: 10px;
+	margin: 20px;
+	cursor: pointer;
+}
+
+#map-canvas { 
+ 	height: 100%;
+	width:100%;
+	padding: 0px;
+} 
+.map-container{
+	height:250px;
+	width:400px;
+	background-color: #4e5d6c;
+	padding:10px;
+	display: none;
+	clear:both;
+	float:right;
+	margin-bottom: 10px;
+	-webkit-box-shadow: 0px 7px 5px 0px rgba(50, 50, 50, 0.78);
+	-moz-box-shadow:    0px 7px 5px 0px rgba(50, 50, 50, 0.78);
+	box-shadow:         0px 7px 5px 0px rgba(50, 50, 50, 0.78);
+}
+ 
+.more-info-btn{
+	cursor: hand;
+	display: block;
+
+}
+
+
+
+.form-wrapper{
+	width: 300px;
+	height: 10px;
+	display: block;
+	overflow: hidden;
+
+}
+
+.trail-info-wrapper {
+	padding: 10px;
+	margin: 20px;
+	/*display: none;*/
+	cursor: pointer;
+	cursor: hand;
+}
+
+.trail-item{
+	overflow: hidden;
+}
+
 

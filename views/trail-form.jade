@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    .container    
+        .logo-bar 
+            .img-wrapper
+                h1 
+                    span#location-slide
+            .img-wrapper
+                h1 
+                    span#logo-slide Trail Rate 
+                img(src = 'http://cdn01.wallconvert.com/_media/wallpapers_1366x768/1/2/black-hills-and-white-mountains-11641.jpg')
+
+        form#add-form(action="/trail", method="post")
+            .form-group
+                input.form-control(name="name", type="text", placeholder="Name of Trail")
+            .form-group
+                textarea.form-control(name="description",rows="5", placeholder="Description")
+            .form-group
+                textarea.form-control(name="location", type="text", placeholder="City located in?")
+            .form-group
+                input.btn.btn-success(type="submit")    
+                a(href='/trails') 
+                    .btn.btn-warning View Trails
+        
+
+            

@@ -7,7 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var indexController = require('./controllers/indexController.js');
-var ApplicationModel = require('./models/applicantsModel');
+var ApplicationModel = require('./models/trailsModel');
 var app = express();
 var mongoose = require('mongoose');
 // all environments
@@ -21,29 +21,34 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://localhost/mycompanyname');
+mongoose.connect('mongodb://localhost/trailrate');
 
 
 
 
 
 //renders the index page
-app.get('/', function(req, res){
-	res.render('index')
+app.get('/',function(req,res){
+	res.render('index.jade')
+});
+
+//renders form page
+app.get('/trail-form', function(req, res){
+	res.render('trail-form')
 });
 
 
 // displays a list of applicants
-app.get('/applicants', indexController.list);
+app.get('/trails', indexController.list);
 
 // creates an applicant
-app.post('/applicant', indexController.create);
+app.post('/trail', indexController.create);
 
 // deletes applicant
-app.get('/applicants/delete/:id', indexController.remove);
+app.get('/trails/delete/:id', indexController.remove);
 
 // display app profile
-app.get('/applicants/single-applicant/:id',indexController.get)
+app.get('/trails/single-trail/:id',indexController.get)
 
 
 

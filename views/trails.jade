@@ -18,15 +18,18 @@ block content
             a.btn.btn-default(href= '/trails') All Trails
                 br
         for trail in trails
-            ul#trails.list-unstyled 
-                    a.h1.location-text= trail.name
-                .description    
-                    p.h2 Trail Description 
-                        li= trail.description
-                    p.h2 Trail location    
-                        li= trail.location
+            .single-trail-container
+                ul#trails.list-unstyled 
+                        a.h1.location-text= trail.name
+                    .description    
+                        p.h2 Trail Description 
+                            p= trail.description
+                        p.h2 Trail location    
+                            p= trail.location
 
-                    a(href = "/trails/delete/#{trail._id}")
-                        .btn.btn-danger Romove
-                    a(href = "/trails/single-trail/#{trail._id}")
-                        .btn.btn-success Directions
+                        a(href = "/trails/delete/#{trail._id}")
+                            .btn.btn-danger Romove
+                        a(href = "/trails/single-trail/#{trail._id}")
+                            .btn.btn-success Directions
+                        
+

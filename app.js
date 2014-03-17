@@ -38,16 +38,16 @@ app.get('/trail-form', function(req, res){
 });
 
 
-// displays a list of applicants
+// displays a list of trails
 app.get('/trails', indexController.list);
 
-// creates an applicant
+// creates a trails
 app.post('/trail', indexController.create);
 
-// deletes applicant
+// deletes trails
 app.get('/trails/delete/:id', indexController.remove);
 
-// display app profile
+// display single
 app.get('/trails/single-trail/:id',indexController.get)
 
 

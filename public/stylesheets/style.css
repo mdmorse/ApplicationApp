@@ -31,9 +31,7 @@ body {
  .container{
  	overflow: hidden;
  }
-/* .container-fluid{
-	padding:20px;
-}*/
+
 .description{
  	padding:10px;
  	margin: 20px;
@@ -94,27 +92,34 @@ img.icon{
 	border-bottom: 1px solid white;
 	box-shadow: 
 }
-.main-trail-container{
-	display: none;
-	padding: 10px;
-	margin: 20px;
-	cursor: pointer;
-}
 
 #map-canvas { 
  	height: 100%;
 	width:100%;
 	padding: 0px;
+	margin: 0px auto;
+
 } 
 .map-container{
-	height:250px;
-	width:400px;
+	overflow: hidden;
+	height:400px;
+	width:100%;
 	background-color: #4e5d6c;
-	padding:10px;
-	display: none;
-	clear:both;
 	float:right;
-	margin-bottom: 10px;
+	padding: 20px;
+	-webkit-box-shadow: 0px 7px 5px 0px rgba(50, 50, 50, 0.78);
+	-moz-box-shadow:    0px 7px 5px 0px rgba(50, 50, 50, 0.78);
+	box-shadow:         0px 7px 5px 0px rgba(50, 50, 50, 0.78);
+}
+.directions-container{
+	overflow: hidden;
+	display: none;
+	clear: both;
+	height:400px;
+	width:100%;
+	background-color: #4e5d6c;
+	float:right;
+	padding: 20px;
 	-webkit-box-shadow: 0px 7px 5px 0px rgba(50, 50, 50, 0.78);
 	-moz-box-shadow:    0px 7px 5px 0px rgba(50, 50, 50, 0.78);
 	box-shadow:         0px 7px 5px 0px rgba(50, 50, 50, 0.78);
@@ -147,5 +152,39 @@ img.icon{
 .trail-item{
 	overflow: hidden;
 }
+#directions-panel {
+  /*float: right;*/
+  /*margin-right: 15px;*/
+  width: 100%;
+  -webkit-box-shadow: 0px 7px 5px 0px rgba(50, 50, 50, 0.78);
+  -moz-box-shadow:    0px 7px 5px 0px rgba(50, 50, 50, 0.78);
+  box-shadow:         0px 7px 5px 0px rgba(50, 50, 50, 0.78);
+  overflow: hidden;
+
+
+}
+.adp{
+	background-color: white;
+}
+#control {
+        background: #fff;
+        padding: 5px;
+        font-size: 14px;
+        font-family: Arial;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+        display: none;
+}
+.footer{
+	height: 50px;
+	clear: both;
+}
+
+
+
+
+
+
+      
 
 

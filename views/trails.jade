@@ -1,7 +1,6 @@
 extends layout
 
-block content
-    .container    
+block content   
         .logo-bar 
             .img-wrapper
                 h1 
@@ -17,22 +16,24 @@ block content
             a.btn.btn-default(href= '/trail-form') Add a Trail
             a.btn.btn-default(href= '/trails') All Trails
                 br
-        for trail in trails
-            .single-trail-container
-                ul#trails.list-unstyled
-                    
-                    h2.span.glyphicon.glyphicon-chevron-right.right-arrow.toggle-arrow
-                    
-                    a.h1.location-text= trail.name
-                    span.h2.location-label= trail.location       
-                    .description    
-                        p.h2 Trail Description 
-                            p= trail.description
-                        p.h2 Trail location    
-                            p= trail.location
-                        a(href = "/trails/delete/#{trail._id}")
-                            .btn.btn-danger Romove
-                        a(href = "/trails/single-trail/#{trail._id}")
-                            .btn.btn-success Directions
+        .container
+            for trail in trails
+                .single-trail-container
+                    ul#trails.list-unstyled
+                        
+                        h2.glyphicon.glyphicon-circle-arrow-right.toggle-arrow
+                        
+                        a.h1.location-text= trail.name
+                        h2.location-label= trail.location       
+                        .description    
+                            p.h2 Trail Description 
+                                p= trail.description
+                            p.h2 Trail location    
+                                p= trail.location
+                            .btn-group
+                                a.btn.btn-danger(href = "/trails/delete/#{trail._id}") Remove
+                                    //- .btn.btn-danger Romove
+                                a.btn.btn-success(href = "/trails/single-trail/#{trail._id}") Directions
+                                    //- .btn.btn-success Directions
                         
 

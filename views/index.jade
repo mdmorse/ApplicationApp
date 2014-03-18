@@ -1,7 +1,6 @@
 extends layout
 
 block content
-    .container.backstretch
     .logo-bar 
             .img-wrapper
                 h1 
@@ -14,25 +13,14 @@ block content
             a.btn.btn-default(href= '/') Home
                 .glyphicon.glyphicon-home
             a.btn.btn-default(href= '/trail-form') Add a Trail
-            a.btn.btn-default(href= '/trails') All Trails
-                          
+            a.btn.btn-default(href= '/trails') All Trails                   
         .login-container
             .row
                 .col-md-5
                 .col-md-2#login 
-                    form.form-inline(role='form')
-                    .form-group
-                        label.sr-only(for='exampleInputEmail2') Email address
-                        input#exampleInputEmail2.form-control(type='email', placeholder='Enter email')
-                      .form-group
-                        label.sr-only(for='exampleInputPassword2') Password
-                        input#exampleInputPassword2.form-control(type='password', placeholder='Password')
-                      .checkbox
-                        label
-                          input(type='checkbox')
-                          | Remember me
-                      button.btn.btn-default(type='submit') Sign in
-     
+                    a.btn.btn-success.btn-group-justified(href='/login/facebook') Login Through Facebook
+                    a.btn.btn-danger.btn-group-justified(href='/logout') Log Out 
+
                 .col-md-5                
         
 

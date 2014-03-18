@@ -1,24 +1,24 @@
 module.exports = {
 	login:function(req, res){
 		if(req.isAuthenticated()){
-			res.render('trail-form');
+			res.render('index');
 		}
 		else{
 			res.render('login',{title: 'Login'});
 		}
 	},
 	loginSuccess: function(req, res){
-		res.render('trail-form');
+		res.render('index');
 	},
 	logout:function(req,res){
 		req.logout();
-		res.redirect('/login');
+		res.render('index');
 	},
 	ensureAuthenticated: function(req, res, next){
 		if(req.isAuthenticated()){
 			return next();
 		}
-		res.render('trail-form');
+		res.render('index');
 	},
 	ensureAuthenticatedAjax:function(req,res,next){
 		if(req.isAuthenticated()){

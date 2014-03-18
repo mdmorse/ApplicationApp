@@ -1,33 +1,32 @@
 extends layout
 
 block content
-    .container    
-        .logo-bar 
-            .img-wrapper
-                h1 
-                    span#location-slide Trail Rate
-            .img-wrapper
-                h1 
-                    span#logo-slide= singleTrail.name 
-                img(src = 'http://cdn01.wallconvert.com/_media/wallpapers_1366x768/1/2/black-hills-and-white-mountains-11641.jpg')
-    
-        .btn-group.btn-group-justified       
-            a.btn.btn-default(href= '/') Home
-                .glyphicon.glyphicon-home
-            a.btn.btn-default(href= '/trail-form') Add a Trail
-            a.btn.btn-default(href= '/trails') All Trails
-        h2 Trail Details:
+
+    .logo-bar 
+        .img-wrapper
+            h1 
+                span#location-slide Trail Rate
+        .img-wrapper
+            h1 
+                span#logo-slide= singleTrail.name 
+            img(src = 'http://cdn01.wallconvert.com/_media/wallpapers_1366x768/1/2/black-hills-and-white-mountains-11641.jpg')
+
+    .btn-group.btn-group-justified       
+        a.btn.btn-default(href= '/') Home
+            .glyphicon.glyphicon-home
+        a.btn.btn-default(href= '/trail-form') Add a Trail
+        a.btn.btn-default(href= '/trails') All Trails
+    .container
+        h2= singleTrail.name
+        h3= singleTrail.location 
         p= singleTrail.description
-        p= singleTrail.location
+            a.btn.fb-share-button(data-href='https://developers.facebook.com/docs/plugins/', data-width='200', data-type='button') 
         h2= singleTrail.region
         a(href = "/trails/delete/#{singleTrail._id}")
                     .btn.btn-danger Remove
         a(href = "/trails")
                     .btn.btn-info Back to List
-        a.btn.btn-default#view-directions View Directions
-        .fb-share-button(data-href='https://developers.facebook.com/docs/plugins/', data-type='button_count')
-
-       
+        a.btn.btn-warning#view-directions View Directions
         .row
             .col-md-8
                 .map-container
@@ -40,7 +39,6 @@ block content
                             option(value='Boulder, Co') Boulder Co
                             option(value='Colorado Springs, Co') Co Springs
                             option(value='Aroura, Co') Auroura Co
-
                         b End: 
                           select#end(onchange='calcRoute();')
                              option(value= singleTrail.name +',' + singleTrail.location)= singleTrail.name

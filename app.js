@@ -35,9 +35,9 @@ mongoose.connect('mongodb://localhost/trailrate');
 
 
 //****************Passport********************
-app.get('/authorize', 
+app.get('/', 
 	authController.ensureAuthenticated,
-	indexController.list
+	indexController.create
 );
 
 app.get('/login', authController.login);

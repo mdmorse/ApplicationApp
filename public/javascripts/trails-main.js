@@ -1,17 +1,43 @@
 $(function(){
 
 	$(window).load(function(){
-		$('#logo-slide').fadeIn('slow');
+		$('#logo-slide').fadeIn(1000);
 		var logo = document.getElementById("logo-slide");
 		TweenLite.to(logo,4, {left:"73%",ease:Quint.easeInOut});
 		$('#login').fadeIn(3000);
 	});
 	
-	$(document).on('click','.toggle-arrow',function (){				
-			$(this).closest('.single-trail-container').find('.description').slideToggle('fast');
-			TweenLite.to('.toggle-arrow', .25, {rotation:90, scaleX:0.8});
+	$(document).on('click','.toggle-arrow',function (){
+		// $('.toggle-arrow').animate({rotation:90deg})
+		$(this).closest('.single-trail-container').find('.description').slideToggle('fast').toggleClass('showing');
+		
+
+		if(!$(this).closest('.single-trail-container').find('.description').hasClass('showing')){
+		TweenLite.to($(this), .25, {rotation:0, scaleX:1});
+		}else{
+		TweenLite.to($(this), .25, {rotation:90, scaleX:0.8});	
+		}
+		// TweenLite.killTweensOf($('.toggle-arrow'));
 	});
 	
+	
+
+   //      $('.toggle-arrow').click(function(){
+			// $(this).closest('.single-trail-container').find('.description').slideToggle('slow');
+
+            // var elem = $('.single-trail-container'+$(this).attr()),
+            //     arrow = $(this).children('.toggle-arrow')
+            
+            // if (!elem.is(':visible'))  {
+            //     $(this).rotate({animateTo:180});
+            // } else {
+            //     $(this).rotate({animateTo:360});
+            // }
+    
+     
+    //     return false;
+    // });
+
 	$(document).on('change', '#start', calcRoute);
 
 	$('#view-directions').click(function(){
@@ -71,6 +97,21 @@ $(function(){
 
 // calcRoute();
 // initialize();
+	window.fbAsyncInit = function() {
+	        FB.init({
+	          appId      : '{445421345603958}',
+	          status     : true,
+	          xfbml      : true
+	        });
+	      };
+
+	      (function(d, s, id){
+	         var js, fjs = d.getElementsByTagName(s)[0];
+	         if (d.getElementById(id)) {return;}
+	         js = d.createElement(s); js.id = id;
+	         js.src = "//connect.facebook.net/en_US/all.js";
+	         fjs.parentNode.insertBefore(js, fjs);
+	       }(document, 'script', 'facebook-jssdk'));
 
 
 });

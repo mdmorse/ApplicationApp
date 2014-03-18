@@ -1,37 +1,34 @@
 $(function(){
 
 	$(window).load(function(){
+		$('#logo-slide').fadeIn('slow');
 		var logo = document.getElementById("logo-slide");
-		TweenLite.to(logo,4, {left:"73%"});
+		TweenLite.to(logo,4, {left:"73%",ease:Quint.easeInOut});
+
 	});
 	
-	$(document).on('click','.location-text',function (){				
-			$(this).closest('.single-trail-container').find('.description').slideToggle('fast');				
+	$(document).on('click','.toggle-arrow',function (){				
+			$(this).closest('.single-trail-container').find('.description').slideToggle('fast');
+			TweenLite.to('.toggle-arrow', .25, {rotation:90, scaleX:0.8});
 	});
+	
 	$(document).on('change', '#start', calcRoute);
 
 	$('#view-directions').click(function(){
-		$('.directions-container').slideToggle('fast');
+		$('#directions-panel').toggle('fast');
+		$('#view-directions').text(function(i, text){
+			return text === "View Directions" ? "Map Only" : "View Directions";
+		});
 	});
+	
+	$(function() {
+    $(".rslides").responsiveSlides();
+  });
 
 	// $('.location-text').click(function(){
 	// 	$('.description').slideToggle('fast');
 	// });
 
-	// var moreDetails = function(){
-	// 	$('location-text').click(function(){
-	// 		$.ajax('/trails',{
-	// 			data:{location:location},
-	// 			success:function(data){
-	// 				var logo = document.getElementById("description");
-	// 				TweenLite.to(logo,4, {left:"73%"});
-	// 			}
-	// 		})
-	// 	});
-	// }
-
-
-// moreDetails();
 
 //****************Displays Map********************
 

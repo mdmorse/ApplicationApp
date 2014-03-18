@@ -154,12 +154,13 @@ img.icon{
 }
 #directions-panel {
   /*float: right;*/
-  /*margin-right: 15px;*/
+  display: none;
   width: 100%;
   -webkit-box-shadow: 0px 7px 5px 0px rgba(50, 50, 50, 0.78);
   -moz-box-shadow:    0px 7px 5px 0px rgba(50, 50, 50, 0.78);
   box-shadow:         0px 7px 5px 0px rgba(50, 50, 50, 0.78);
   overflow: hidden;
+  margin-top: -5px;
 
 
 }
@@ -179,7 +180,20 @@ img.icon{
 	height: 50px;
 	clear: both;
 }
-
+.toggle-arrow{
+	border: white 1px white;
+}
+.location-label{
+	float: right;
+}
+#pannel{
+	color: black
+}
+.login-container{
+	margin-top: 100px;
+	height: 400px;
+	
+}
 
 
 

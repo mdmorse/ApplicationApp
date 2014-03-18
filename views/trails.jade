@@ -19,14 +19,17 @@ block content
                 br
         for trail in trails
             .single-trail-container
-                ul#trails.list-unstyled 
-                        a.h1.location-text= trail.name
+                ul#trails.list-unstyled
+                    
+                    h2.span.glyphicon.glyphicon-chevron-right.right-arrow.toggle-arrow
+                    
+                    a.h1.location-text= trail.name
+                    span.h2.location-label= trail.location       
                     .description    
                         p.h2 Trail Description 
                             p= trail.description
                         p.h2 Trail location    
                             p= trail.location
-
                         a(href = "/trails/delete/#{trail._id}")
                             .btn.btn-danger Romove
                         a(href = "/trails/single-trail/#{trail._id}")

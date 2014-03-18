@@ -27,23 +27,26 @@ block content
         a.btn.btn-default#view-directions View Directions
         .fb-share-button(data-href='https://developers.facebook.com/docs/plugins/', data-type='button_count')
 
-        .map-container
-            #panel
-                b Start: 
-                  select#start
-                    option(value='Denver, Co') Denver Co
-                    option(value='Littleton, Co') Littleton Co
-                    option(value='Evergreen, Co') Evergreen Co
-                    option(value='Boulder, Co') Boulder Co
-                    option(value='Colorado Springs, Co') Co Springs
-                    option(value='Aroura, Co') Auroura Co
+       
+        .row
+            .col-md-8
+                .map-container
+                    #panel
+                        b Start: 
+                          select#start
+                            option(value='Denver, Co') Denver Co
+                            option(value='Littleton, Co') Littleton Co
+                            option(value='Evergreen, Co') Evergreen Co
+                            option(value='Boulder, Co') Boulder Co
+                            option(value='Colorado Springs, Co') Co Springs
+                            option(value='Aroura, Co') Auroura Co
 
-                b End: 
-                  select#end(onchange='calcRoute();')
-                     option(value= singleTrail.name +',' + singleTrail.location)= singleTrail.name
-            #map-canvas
-        .directions-container        
-            #directions-panel        
+                        b End: 
+                          select#end(onchange='calcRoute();')
+                             option(value= singleTrail.name +',' + singleTrail.location)= singleTrail.name
+                    #map-canvas
+            .col-md-4        
+                #directions-panel        
         .footer
        
                     

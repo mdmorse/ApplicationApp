@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    .container
+    .container.backstretch
     .logo-bar 
             .img-wrapper
                 h1 
@@ -16,24 +16,24 @@ block content
             a.btn.btn-default(href= '/trail-form') Add a Trail
             a.btn.btn-default(href= '/trails') All Trails
                           
-    .login-container
-        .row
-            .col-md-5
-            .col-md-2 
-                form.form-inline(role='form')
-                .form-group
-                    label.sr-only(for='exampleInputEmail2') Email address
-                    input#exampleInputEmail2.form-control(type='email', placeholder='Enter email')
-                  .form-group
-                    label.sr-only(for='exampleInputPassword2') Password
-                    input#exampleInputPassword2.form-control(type='password', placeholder='Password')
-                  .checkbox
-                    label
-                      input(type='checkbox')
-                      | Remember me
-                  button.btn.btn-default(type='submit') Sign in
- 
-            .col-md-5                
+        .login-container
+            .row
+                .col-md-5
+                .col-md-2#login 
+                    form.form-inline(role='form')
+                    .form-group
+                        label.sr-only(for='exampleInputEmail2') Email address
+                        input#exampleInputEmail2.form-control(type='email', placeholder='Enter email')
+                      .form-group
+                        label.sr-only(for='exampleInputPassword2') Password
+                        input#exampleInputPassword2.form-control(type='password', placeholder='Password')
+                      .checkbox
+                        label
+                          input(type='checkbox')
+                          | Remember me
+                      button.btn.btn-default(type='submit') Sign in
+     
+                .col-md-5                
         
 
 

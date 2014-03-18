@@ -4,7 +4,7 @@ $(function(){
 		$('#logo-slide').fadeIn('slow');
 		var logo = document.getElementById("logo-slide");
 		TweenLite.to(logo,4, {left:"73%",ease:Quint.easeInOut});
-
+		$('#login').fadeIn(3000);
 	});
 	
 	$(document).on('click','.toggle-arrow',function (){				
@@ -21,9 +21,7 @@ $(function(){
 		});
 	});
 	
-	$(function() {
-    $(".rslides").responsiveSlides();
-  });
+	// $.backstretch('http://cdn01.wallconvert.com/_media/wallpapers_1366x768/1/2/black-hills-and-white-mountains-11641.jpg');
 
 	// $('.location-text').click(function(){
 	// 	$('.description').slideToggle('fast');

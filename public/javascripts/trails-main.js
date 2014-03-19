@@ -18,9 +18,9 @@ $(function(){
 		
 
 		if(!$(this).closest('.single-trail-container').find('.description').hasClass('showing')){
-		TweenLite.to($(this), .25, {rotation:0, scaleX:1});
+		TweenLite.to($(this), .40, {rotation:0, scaleX:1});
 		}else{
-		TweenLite.to($(this), .25, {rotation:90, scaleX:0.8});	
+		TweenLite.to($(this), .40, {rotation:90, scaleX:0.8});	
 		}
 		// TweenLite.killTweensOf($('.toggle-arrow'));
 	});

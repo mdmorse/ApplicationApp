@@ -30,7 +30,7 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 if(global.process.env.MONGOHQ_URL){
-	mongooseconnect(global.process.env.MONGOHQ_URL);
+	mongoose.connect(global.process.env.MONGOHQ_URL);
 }else{
 	mongoose.connect('mongodb://localhost/trailrate');
 }

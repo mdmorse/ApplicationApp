@@ -3,8 +3,13 @@ $(function(){
 	$(window).load(function(){
 		$('#logo-slide').fadeIn(1000);
 		var logo = document.getElementById("logo-slide");
-		TweenLite.to(logo,4, {left:"73%",ease:Quint.easeInOut});
+		TweenLite.to(logo,4, {left:"73%",ease:Power2.easeOut});
 		$('#login').fadeIn(3000);
+		
+		$('#image-slide').fadeIn(3000);
+		var logo = document.getElementById("image-slide");
+		TweenLite.to(logo,4, {left:"87%",ease:Quint.easeInOut});
+		
 	});
 	
 	$(document).on('click','.toggle-arrow',function (){

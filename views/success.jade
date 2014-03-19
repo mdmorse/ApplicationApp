@@ -2,13 +2,12 @@ extends layout
 
 block content
     .logo-bar 
-        .img-wrapper
-            h1 
-                span#location-slide
-        .img-wrapper
-            h1 
-                span#logo-slide Congratulations! 
-            img(src = 'http://cdn01.wallconvert.com/_media/wallpapers_1366x768/1/2/black-hills-and-white-mountains-11641.jpg')
+            #image-slide
+                img(src ='/images/bike-hike.svg')        
+            .img-wrapper
+                h1 
+                    span#logo-slide Congratulations! 
+                img(src = 'http://cdn01.wallconvert.com/_media/wallpapers_1366x768/1/2/black-hills-and-white-mountains-11641.jpg')
         .btn-group.btn-group-justified       
             a.btn.btn-default(href= '/') Home
                 .glyphicon.glyphicon-home

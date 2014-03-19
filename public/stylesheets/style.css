@@ -42,6 +42,7 @@ body {
  }
 
 
+
 header{
 	widows: 100%;
 	background-color: #4E5D6C;
@@ -53,15 +54,29 @@ h1{
 	font-size: 24em;
 }
 h1 span{
+	display: none;
 	position: absolute;
 	width:100%;
-	top:200px;
+	top:175px;
 	left:0px;
 	width:25%;
 	margin-left: 30px;
 	letter-spacing: -1px;  
    	background: rgb(0, 0, 0); /* fallback color */
    	background: rgba(0, 0, 0, 0.7);
+   	padding: 10px; 
+}
+#image-slide{
+	position: absolute;
+	width:200px;
+	top:30px;
+	left:-10px;
+	display: none;
+	margin-left: 30px;
+	letter-spacing: -1px;
+	opacity: .50;  
+   	-webkit-filter: invert(100%);
+    filter: invert(100%);
    	padding: 10px; 
 }
 

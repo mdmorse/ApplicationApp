@@ -23,7 +23,7 @@ var trailController = module.exports ={
 	get: function(req,res){
 		var trailId = req.params.id;
 		trailModel.findById(trailId, function(err,docs){
-			res.render('single-trail',{singleTrail:docs});
+			res.render('single-trail',{singleTrail:docs,title:docs.name});
 	});
 }
 

@@ -8,7 +8,7 @@ $(function(){
 		
 		$('#image-slide').fadeIn(3000);
 		var logo = document.getElementById("image-slide");
-		TweenLite.to(logo,4, {left:"87%",ease:Quint.easeInOut});
+		TweenLite.to(logo,4, {left:"84%",ease:Quint.easeInOut});
 		
 	});
 	

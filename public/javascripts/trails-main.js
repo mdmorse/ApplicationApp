@@ -14,7 +14,7 @@ $(function(){
 	
 	$(document).on('click','.toggle-arrow',function (){
 		// $('.toggle-arrow').animate({rotation:90deg})
-		$(this).closest('.single-trail-container').find('.description').slideToggle('fast').toggleClass('showing');
+		$(this).closest('.single-trail-container').find('.description').slideToggle('slow').toggleClass('showing');
 		
 
 		if(!$(this).closest('.single-trail-container').find('.description').hasClass('showing')){

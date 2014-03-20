@@ -236,6 +236,9 @@ h1 span{
 	background-color: #4E5D6C;
 }
 
+select{ color: #000 !important;
+		font-weight: bold;
+ }
 
 
 

@@ -22,6 +22,8 @@ block content
         h2= singleTrail.region
         .row
             .col-md-8
+                .row
+            .col-md-8
                 #map-nav-container
                     a(href = "/trails/delete/#{singleTrail._id}")
                                 .btn.btn-danger Remove
@@ -40,12 +42,8 @@ block content
                     b.btn.btn-default.map-drop End: 
                                       select#end(onchange='calcRoute();')
                                         option(value= singleTrail.name +',' + singleTrail.location)= singleTrail.name
-
-        .row
-            .col-md-8
                 .map-container
-                    #panel
-                        
+                    #panel  
                     #map-canvas
             .col-md-4        
                 #directions-panel        

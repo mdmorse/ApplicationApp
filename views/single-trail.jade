@@ -18,28 +18,34 @@ block content
         h2= singleTrail.name
         h3= singleTrail.location 
         p= singleTrail.description
-            a.btn.fb-share-button(data-href='http://trail-log.herokuapp.com/trails/single-trail/#{singleTrail._id}', data-width='200', data-type='button') 
+                    a.btn.fb-share-button#fb-btn(data-href='http://trail-log.herokuapp.com/trails/single-trail/#{singleTrail._id}', data-width='200', data-type='button') 
         h2= singleTrail.region
-        a(href = "/trails/delete/#{singleTrail._id}")
-                    .btn.btn-danger Remove
-        a(href = "/trails")
-                    .btn.btn-info Back to List
-        a.btn.btn-warning#view-directions View Directions
+        .row
+            .col-md-8
+                #map-nav-container
+                    a(href = "/trails/delete/#{singleTrail._id}")
+                                .btn.btn-danger Remove
+                    a(href = "/trails")
+                                .btn.btn-info Back to List
+                    a.btn.btn-warning#view-directions View Directions
+                    
+                    b.btn.btn-default.map-drop Start: 
+                                      select#start
+                                        option(value='Denver, Co') Denver Co
+                                        option(value='Littleton, Co') Littleton Co
+                                        option(value='Evergreen, Co') Evergreen Co
+                                        option(value='Boulder, Co') Boulder Co
+                                        option(value='Colorado Springs, Co') Co Springs
+                                        option(value='Aroura, Co') Auroura Co
+                    b.btn.btn-default.map-drop End: 
+                                      select#end(onchange='calcRoute();')
+                                        option(value= singleTrail.name +',' + singleTrail.location)= singleTrail.name
+
         .row
             .col-md-8
                 .map-container
                     #panel
-                        b Start: 
-                          select#start
-                            option(value='Denver, Co') Denver Co
-                            option(value='Littleton, Co') Littleton Co
-                            option(value='Evergreen, Co') Evergreen Co
-                            option(value='Boulder, Co') Boulder Co
-                            option(value='Colorado Springs, Co') Co Springs
-                            option(value='Aroura, Co') Auroura Co
-                        b End: 
-                          select#end(onchange='calcRoute();')
-                             option(value= singleTrail.name +',' + singleTrail.location)= singleTrail.name
+                        
                     #map-canvas
             .col-md-4        
                 #directions-panel        

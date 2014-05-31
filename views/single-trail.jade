@@ -2,11 +2,13 @@ extends layout
 
 block content
     .logo-bar 
-            #image-slide
+            //- #image-slide
                 img#hiker-image(src ='/images/bike-hike.svg')        
             .img-wrapper
+                h1
+                    span#logo-slide Trail Log
                 h1 
-                    span#logo-slide= singleTrail.name 
+                    span#info-slide= singleTrail.name 
                 img#mountain-div(src='/images/mountains.jpg')
 
     .btn-group.btn-group-justified       

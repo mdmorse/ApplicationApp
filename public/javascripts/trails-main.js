@@ -1,47 +1,45 @@
 $(function(){
+	//****************slide show*******************
+	
 
+    $('.carousel.slide').carousel({
+    	interval:3000,
+    	wrap: true
+    });
+    
+	$('#intro-header').fadeIn(2000);
+
+	$('#intro-description').fadeIn(4000);
+	
 	$(window).load(function(){
 		$('#logo-slide').fadeIn(1000);
 		var logo = document.getElementById("logo-slide");
 		TweenLite.to(logo,4, {left:"73%",ease:Power2.easeOut});
-		$('#login').fadeIn(3000);
-		
-		$('#image-slide').fadeIn(3000);
-		var logo = document.getElementById("image-slide");
-		TweenLite.to(logo,4, {left:"82%",ease:Quint.easeInOut});
-		
+
+		$('#info-slide').fadeIn(2000);
+		var info = document.getElementById("info-slide");
+		TweenLite.to(info,4, {left:"35%",ease:Power2.easeOut});
 	});
-	
+	$('#show-js').fadeIn('slow');
+
+	//******************animated arrows on trails page***********************
 	$(document).on('click','.toggle-arrow',function (){
 		// $('.toggle-arrow').animate({rotation:90deg})
 		$(this).closest('.single-trail-container').find('.description').slideToggle('slow').toggleClass('showing');
-		
-
 		if(!$(this).closest('.single-trail-container').find('.description').hasClass('showing')){
-		TweenLite.to($(this), .40, {rotation:0});
+		TweenLite.to($(this), .75, {rotation:0});
 		}else{
 		TweenLite.to($(this), .40, {rotation:90});	
 		}
-		// TweenLite.killTweensOf($('.toggle-arrow'));
 	});
 	
-	
 
-   //      $('.toggle-arrow').click(function(){
-			// $(this).closest('.single-trail-container').find('.description').slideToggle('slow');
 
-            // var elem = $('.single-trail-container'+$(this).attr()),
-            //     arrow = $(this).children('.toggle-arrow')
-            
-            // if (!elem.is(':visible'))  {
-            //     $(this).rotate({animateTo:180});
-            // } else {
-            //     $(this).rotate({animateTo:360});
-            // }
-    
-     
-    //     return false;
-    // });
+
+
+
+
+//****************************View Map only, or dirctions button on "Details Page"************************
 
 	$(document).on('change', '#start', calcRoute);
 
@@ -52,11 +50,6 @@ $(function(){
 		});
 	});
 	
-	// $.backstretch('http://cdn01.wallconvert.com/_media/wallpapers_1366x768/1/2/black-hills-and-white-mountains-11641.jpg');
-
-	// $('.location-text').click(function(){
-	// 	$('.description').slideToggle('fast');
-	// });
 
 
 //****************Displays Map********************
@@ -100,8 +93,7 @@ $(function(){
 
 	google.maps.event.addDomListener(window, 'load', initialize);
 
-// calcRoute();
-// initialize();
+
 	window.fbAsyncInit = function() {
 	        FB.init({
 	          appId      : '{445421345603958}',

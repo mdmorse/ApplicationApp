@@ -4,8 +4,7 @@ var trailController = module.exports ={
 
 	list: function(req,res){
 		trailModel.find({}, function(err,docs){
-			res.render('trails',{trails:docs
-		});
+			res.render('trails',{trails:docs});
 	}); 	 	
 },
 	create: function(req,res){

@@ -1,27 +1,61 @@
 extends layout
 
 block content
-    .logo-bar 
-            #image-slide
+    .body
+        //- .logo-bar 
+            //- #image-slide
                 img#hiker-image(src ='/images/bike-hike.svg')        
-            .img-wrapper
+            //- .img-wrapper
                 h1 
                     span#logo-slide Trail Log     
-                img#mountain-div(src='/images/mountains.jpg')
-    .btn-group.btn-group-justified       
-            a.btn.btn-default(href= '/') Home
-                .glyphicon.glyphicon-home
-            a.btn.btn-default(href= '/trail-form') Add a Trail
-            a.btn.btn-default(href= '/trails') All Trails                   
-        .login-container
-            .row
-                .col-md-5
-                .col-md-2#login 
-                    a.btn.btn-success.btn-group-justified(href='#') Login
-                    a.btn.btn-danger.btn-group-justified(href='#') Log Out 
+                //- img#mountain-div(src='/images/mountains.jpg')
+        //- .btn-group.btn-group-justified       
+                a.btn.btn-default(href= '/') Home
+                    .glyphicon.glyphicon-home
+                a.btn.btn-default(href= '/trail-form') Add a Trail
+                a.btn.btn-default(href= '/trails') All Trails 
 
-                               
-        
+
+        #slideshow.carousel.slide
+            ol.carousel-indicators
+                li(data-target="#slideshow", data-slide-to="0").active
+                li(data-target="#slideshow", data-slide-to="1")
+                li(data-target="#slideshow", data-slide-to="2")
+                li(data-target="#slideshow", data-slide-to="3")
+                li(data-target="#slideshow", data-slide-to="4")
+
+
+            .carousel-inner
+                .item.active
+                    img(src='/images/mountains.jpg').img-responsive
+                                  
+                .item
+                    img(src = 'http://ux.brookdalecc.edu/student/csterling2/dreamweaver/hw%203%20-%20AP%20Denali%20and%20Gates/parks/images/gates_hiker.jpg').img-responsive
+                 
+                .item
+                    img(src = 'http://www.adventure-journal.com/wp-content/uploads/wallpapers/wallpaper_SM003_1920x1200.jpg').img-responsive
+                    
+                .item
+                    img(src = 'http://www.peakleaders.com/wp-content/uploads/2012/08/PL_Slider_MTN_Bike_Courses1.jpg').img-responsive
+                .item
+                    img(src = 'http://www.pasadenahikingpacers.com/communities/0/004/011/913/990/images/4593601686.jpg').img-responsive
+
+                
+            a.carousel-control.left(href="#slideshow", data-slide="prev")
+                span.icon-prev
+            a.carousel-control.right(href="#slideshow", data-slide="next")
+                span.icon-next
+        .container
+            
+            .row
+                .col-md-12
+                    h1#intro-header Welcome to trail log
+                    h2#intro-description save and share your outdoor experiences
+                        #home-button
+                            a.btn.btn-default(href= '/trail-form') Add Trail
+                            a.btn.btn-default(href= '/trails') View Trails
+                    
+                
 
 
         

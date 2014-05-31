@@ -2,29 +2,32 @@ extends layout
 
 block content
     .logo-bar 
-            #image-slide
+            //- #image-slide
                 img#hiker-image(src ='/images/bike-hike.svg')        
             .img-wrapper
                 h1 
-                    span#logo-slide Trail Log     
+                    span#logo-slide Trail Log
+                h1
+                    span#info-slide Add A Trail     
                 img#mountain-div(src='/images/mountains.jpg')
     .btn-group.btn-group-justified       
             a.btn.btn-default(href= '/') Home
                 .glyphicon.glyphicon-home
             a.btn.btn-default(href= '/trail-form') Add a Trail
             a.btn.btn-default(href= '/trails') All Trails 
-    .container    
-        form#add-form(action="/trail", method="post")
-            .form-group
-                input.form-control(name="name", type="text", placeholder="Name of Trail")
-            .form-group
-                textarea.form-control(name="description",rows="5", placeholder="Description")
-            .form-group
-                textarea.form-control(name="location", type="text", placeholder="City and State")
-            .form-group
-                input.btn.btn-success(type="submit")    
-                a(href='/trails') 
-                    .btn.btn-warning View Trails
-        
+    .container#show-js
+        .row
+            .col-md-12    
+                form#add-form(action="/trail", method="post", name="trailForm", onsubmit="return validateForm()")
+                    .form-group
+                        input.form-control(name="name", type="text", placeholder="Name of Trail")
+                    .form-group
+                        textarea.form-control(name="description",rows="2", placeholder="Description")
+                    .form-group
+                        textarea.form-control(name="location",rows="1" type="text", placeholder="City and State")
+                    .form-group
+                        input.btn.btn-success(type="submit", value="Submit")    
+                        a(href='/trails') 
+                            .btn.btn-warning View Trails
 
             

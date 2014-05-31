@@ -1,3 +1,4 @@
+
 body {
   font: 14px "Helvetica-Neue", Helvetica, Arial, sans-serif;
 }
@@ -6,10 +7,10 @@ a {
   color: #00B7FF;
 }
 #add-form{
-	border:#EEEEEE solid 1px;
-	border-radius: 5px;
+	border:#4e5d6c solid 1px;
 	padding: 15px;
 	margin: 30px 0px 0px 0px;
+
 	/*margin-top: 10px;*/
 }
 #trails{
@@ -18,6 +19,7 @@ a {
 
 body {
   padding: 0px;
+  margin: 0px;
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
  
 }
@@ -36,9 +38,10 @@ body {
  	padding:10px;
  	margin: 20px;
  	display: none;
- 	border:1px solid white;
+ 	border:1px solid #4e5d6c;
  	overflow: hidden;
  	position: relative;
+ 	clear: both;
  }
 
 
@@ -65,7 +68,7 @@ h1 span{
    	background: rgba(0, 0, 0, 0.7);
    	padding: 10px; 
 }
-#image-slide{
+#image-slide #info-slide{
 	position: absolute;
 	width:200px;
 	top:30px;
@@ -77,6 +80,10 @@ h1 span{
    	-webkit-filter: invert(100%);
     filter: invert(100%);
    	padding: 10px; 
+}
+#info-slide{
+	text-align: center;
+
 }
 
 #hiker-image{
@@ -105,7 +112,7 @@ h1 span{
 	height: 350px;
 	position: relative;
 	border-bottom: 1px solid white;
-	box-shadow: 
+	
 }
 
 #map-canvas { 
@@ -240,8 +247,84 @@ select{ color: #000 !important;
 		font-weight: bold;
  }
 
+ .btn-group.btn-group-justified > a{
+ 	border: #2b3e50 1px solid;
+ 	border-top: none;
+
+ 	-webkit-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+    -moz-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+    -ms-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+    -o-transition: background 0.3s linear 0s, color 0.3s linear 0s;
+    transition: background 0.3s linear 0s, color 0.3s linear 0s;
+}
 
 
-      
+
+#intro-header{
+	text-align: center;
+	margin: auto;
+	text-transform:uppercase;
+	margin-top: 250px; 
+	display: none;
+	font-size: 75px;
+}
+#intro-description{
+	font-size: 25px;
+	margin:auto;
+	text-align: center;
+	text-transform: uppercase;
+	display: none;
+}
+
+#slideshow{
+	width: 100%;
+	margin:auto;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+
+
+#slideshow img{
+	width: 100%;
+	height: 15%
+	top:-80px;
+	position: relative;
+	/*margin: auto;*/
+	opacity: .75; 
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+#home-button > a{
+	margin:auto;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top:30px;
+	position: relative;
+	text-transform: uppercase;
+	opacity: .75;
+	-webkit-transition: opacity 0.3s linear 0s;
+    -moz-transition: opacity 0.3s linear 0s;
+    -ms-transition: opacity 0.3s linear 0s;
+    -o-transition: opacity 0.3s linear 0s;
+    transition: opacity 0.3s linear 0s;
+}
+#home-button > a:hover{
+	opacity: 1.0;
+	/*font-weight: 15px;*/
+}
+
+
+#show-js{
+	display: none;
+}
+
+
+     
 
 

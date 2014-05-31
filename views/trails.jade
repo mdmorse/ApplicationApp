@@ -2,20 +2,23 @@ extends layout
 
 block content   
         .logo-bar 
-            #image-slide
+            //- #image-slide
                 img#hiker-image(src ='/images/bike-hike.svg')        
             .img-wrapper
                 h1 
-                    span#logo-slide Trail Log     
+                    span#logo-slide Trail Log 
+                h1
+                    span#info-slide All Trails     
+
                 img#mountain-div(src='/images/mountains.jpg')
     
-        .btn-group.btn-group-justified       
+        .btn-group.btn-group-justified#fixed      
             a.btn.btn-default(href= '/') Home
                 .glyphicon.glyphicon-home
             a.btn.btn-default(href= '/trail-form') Add a Trail
             a.btn.btn-default(href= '/trails') All Trails
                 br
-        .container
+        .container#show-js
             for trail in trails
                 .single-trail-container
                     ul#trails.list-unstyled

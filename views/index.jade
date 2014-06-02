@@ -52,9 +52,21 @@ block content
                     h1#intro-header Welcome to trail log
                     h2#intro-description save and share your outdoor experiences
                         #home-button
-                            a.btn.btn-default(href= '/trail-form') Add Trail
-                            a.btn.btn-default(href= '/trails') View Trails
-                    
+                            a.btn.btn-success(href= '/trail-form') Add Trail
+                            a.btn.btn-warning(href= '/trails') View Trails
+                            a.btn.btn-info(href= '/#myModal',role="button" data-toggle="modal") Login
+                .modal.fade#myModal(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                button.close(type="button", data-dismiss="modal", aria-hidden="true") &times
+                                h3 additionl stuff
+                            .modal-body
+                                p additionl content
+                            .modal-footer
+                                button.btn.btn-danger(type="button", data-dismiss="modal") Close
+
+
                 
 
 

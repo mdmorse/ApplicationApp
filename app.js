@@ -43,14 +43,14 @@ app.get('/',
 	indexController.create
 );
 
-// app.get('/login', authController.login);
-// app.get('/logout', authController.logout);
-// app.get('/login/facebook', passport.authenticate('facebook'));
-// app.get(
-// 	'/facebook/callback',
-// 	passport.authenticate('facebook', {failureRedirect:'/login'}),
-// 	authController.loginSuccess
-// );
+app.get('/login', authController.login);
+app.get('/logout', authController.logout);
+app.get('/login/facebook', passport.authenticate('facebook'));
+app.get(
+	'/facebook/callback',
+	passport.authenticate('facebook', {failureRedirect:'/login'}),
+	authController.loginSuccess
+);
 
 //renders the index page
 app.get('/',function(req,res){

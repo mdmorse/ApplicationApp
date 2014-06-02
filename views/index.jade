@@ -45,15 +45,21 @@ block content
                             a.btn.btn-info(href= '/#myModal',role="button" data-toggle="modal") Login
                 .modal.fade#myModal(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
                     .modal-dialog
-                        .modal-content
+                        .modal-content.center
                             .modal-header
                                 button.close(type="button", data-dismiss="modal", aria-hidden="true") &times
-                                h3 Create Login
+                                h2 Login Using:
                             .modal-body
-                                p this modal will provide login functionality once complete. 
-                            .modal-footer
-                                button.btn.btn-danger(type="button", data-dismiss="modal") Close
-                                button.btn.btn-success(type="button", data-dismiss="modal") Save
+                               
+                                a(href="login/facebook").btn.btn-info.login-btn(type="button", data-dismiss="modal") 
+                                    img.login-icon(src="images/64/facebook.png")
+                                    
+                                a(href="login/google").btn.btn-info.login-btn(type="button", data-dismiss="modal")
+                                    img.login-icon(src="images/64/google_plus.png")
+                                    
+                            
+                                
+                                
 
 
                 

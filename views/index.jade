@@ -2,18 +2,6 @@ extends layout
 
 block content
     .body
-        //- .logo-bar 
-            //- #image-slide
-                img#hiker-image(src ='/images/bike-hike.svg')        
-            //- .img-wrapper
-                h1 
-                    span#logo-slide Trail Log     
-                //- img#mountain-div(src='/images/mountains.jpg')
-        //- .btn-group.btn-group-justified       
-                a.btn.btn-default(href= '/') Home
-                    .glyphicon.glyphicon-home
-                a.btn.btn-default(href= '/trail-form') Add a Trail
-                a.btn.btn-default(href= '/trails') All Trails 
 
 
         #slideshow.carousel.slide
@@ -60,11 +48,12 @@ block content
                         .modal-content
                             .modal-header
                                 button.close(type="button", data-dismiss="modal", aria-hidden="true") &times
-                                h3 additionl stuff
+                                h3 Create Login
                             .modal-body
-                                p additionl content
+                                p this modal will provide login functionality once complete. 
                             .modal-footer
                                 button.btn.btn-danger(type="button", data-dismiss="modal") Close
+                                button.btn.btn-success(type="button", data-dismiss="modal") Save
 
 
                 

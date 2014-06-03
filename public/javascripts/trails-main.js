@@ -11,15 +11,15 @@ $(function(){
 
 	$('#intro-description').fadeIn(4000);
 	
-	$(window).load(function(){
-		$('#logo-slide').fadeIn(1000);
-		var logo = document.getElementById("logo-slide");
-		TweenLite.to(logo,4, {left:"73%",ease:Power2.easeOut});
+	
+	$('#logo-slide').fadeIn(1000);
+	var logo = document.getElementById("logo-slide");
+	TweenLite.to(logo,4, {left:"73%",ease:Power2.easeOut});
 
-		$('#info-slide').fadeIn(2000);
-		var info = document.getElementById("info-slide");
-		TweenLite.to(info,4, {left:"35%",ease:Power2.easeOut});
-	});
+	$('#info-slide').fadeIn(2000);
+	var info = document.getElementById("info-slide");
+	TweenLite.to(info,4, {left:"35%",ease:Power2.easeOut});
+	
 	$('#show-js').fadeIn('slow');
 
 	//******************animated arrows on trails page***********************
@@ -94,21 +94,21 @@ $(function(){
 	google.maps.event.addDomListener(window, 'load', initialize);
 
 
-	window.fbAsyncInit = function() {
-	        FB.init({
-	          appId      : '{445421345603958}',
-	          status     : true,
-	          xfbml      : true
-	        });
-	      };
+	// window.fbAsyncInit = function() {
+	//         FB.init({
+	//           appId      : '{445421345603958}',
+	//           status     : true,
+	//           xfbml      : true
+	//         });
+	//       };
 
-	      (function(d, s, id){
-	         var js, fjs = d.getElementsByTagName(s)[0];
-	         if (d.getElementById(id)) {return;}
-	         js = d.createElement(s); js.id = id;
-	         js.src = "//connect.facebook.net/en_US/all.js";
-	         fjs.parentNode.insertBefore(js, fjs);
-	       }(document, 'script', 'facebook-jssdk'));
+	//       (function(d, s, id){
+	//          var js, fjs = d.getElementsByTagName(s)[0];
+	//          if (d.getElementById(id)) {return;}
+	//          js = d.createElement(s); js.id = id;
+	//          js.src = "//connect.facebook.net/en_US/all.js";
+	//          fjs.parentNode.insertBefore(js, fjs);
+	//        }(document, 'script', 'facebook-jssdk'));
 
 
 });

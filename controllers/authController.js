@@ -12,7 +12,7 @@ module.exports = {
 	},
 	logout:function(req,res){
 		req.logout();
-		res.redirect('index');
+		res.render('index');
 	},
 	ensureAuthenticated: function(req, res, next){
 		if(req.isAuthenticated()){

@@ -1,14 +1,14 @@
 module.exports = {
 	login:function(req, res){
 		if(req.isAuthenticated()){
-			res.redirect('/');
+			res.redirect('trail-form');
 		}
 		else{
 			res.render('login',{title: 'Login'});
 		}
 	},
 	loginSuccess: function(req, res){
-		res.render('index');
+		res.render('trail-form');
 	},
 	logout:function(req,res){
 		req.logout();

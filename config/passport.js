@@ -13,8 +13,8 @@ passport.deserializeUser(function(userid,done){
 });
 
 var facebookStrategy= new FacebookStrategy({
-	clientID: '445421345603958',
-	clientSecret: '8eaf20a141cf6a188ba146761214d9b1',
+	clientID: '645602348862199',
+	clientSecret: 'a1a4b7ddddce821bbb70102a048f3155',
 	callbackURL: 'http://fast-inlet-3968.herokuapp.com/facebook/callback'
 },		function(accessToken, refreshToken, profile, done){
 	console.log(accessToken,refreshToken,profile);

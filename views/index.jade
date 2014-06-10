@@ -3,7 +3,6 @@ extends layout
 block content
     .body
 
-
         #slideshow.carousel.slide
             ol.carousel-indicators
                 li(data-target="#slideshow", data-slide-to="0").active
@@ -34,7 +33,19 @@ block content
             a.carousel-control.right(href="#slideshow", data-slide="next")
                 span.icon-next
         .container
-            
+            .row
+                .col-md-12
+                    a(href="/logout")
+                        .btn.btn-default.pull-right Logout
+                    .btn-group.pull-right#mobile-menu
+                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown")
+                            .glyphicon.glyphicon-align-justify
+                        ul.dropdown-menu
+                            li
+                                a(href="/index") home
+                                a(href="/trail-form") Add Trail
+                                a(href="/trails") View Trails
+                                a(href="/logout") Logout
             .row
                 .col-md-12
                     h1#intro-header Welcome to trail log
@@ -50,11 +61,10 @@ block content
                                 button.close(type="button", data-dismiss="modal", aria-hidden="true") &times
                                 h2 Login Using:
                             .modal-body
-                               
-                                a(href="login/facebook").btn.btn-info.login-btn(type="button", data-dismiss="modal") 
+                                a(href="login/facebook").btn.btn-info.login-btn 
                                     img.login-icon(src="images/64/facebook.png")
                                     
-                                a(href="login/google").btn.btn-info.login-btn(type="button", data-dismiss="modal")
+                                a(href="login/google").btn.btn-info.login-btn(type="button")
                                     img.login-icon(src="images/64/google_plus.png")
                                     
                             

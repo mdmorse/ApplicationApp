@@ -1,7 +1,7 @@
 module.exports = {
 	login:function(req, res){
 		if(req.isAuthenticated()){
-			res.redirect('index');
+			res.redirect('/');
 		}
 		else{
 			res.render('login',{title: 'Login'});

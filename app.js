@@ -53,7 +53,7 @@ app.get(
 );
 
 //renders the index page
-app.get('/',function(req,res){
+app.get('/',authController.ensureAuthenticated,function(req,res){
 	res.render('index.jade')
 });
 

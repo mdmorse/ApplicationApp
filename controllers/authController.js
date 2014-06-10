@@ -12,13 +12,13 @@ module.exports = {
 	},
 	logout:function(req,res){
 		req.logout();
-		res.render('index');
+		res.redirect('index');
 	},
 	ensureAuthenticated: function(req, res, next){
 		if(req.isAuthenticated()){
 			return next();
 		}
-		res.redirect('index');
+		res.render('index');
 	},
 	ensureAuthenticatedAjax:function(req,res,next){
 		if(req.isAuthenticated()){

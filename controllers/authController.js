@@ -18,7 +18,7 @@ module.exports = {
 		if(req.isAuthenticated()){
 			return next();
 		}
-		res.redirect('login');
+		res.redirect('index');
 	},
 	ensureAuthenticatedAjax:function(req,res,next){
 		if(req.isAuthenticated()){

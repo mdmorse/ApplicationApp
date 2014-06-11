@@ -55,9 +55,10 @@ app.get(
 );
 
 // google
+app.get('/auth/google', passport.authenticate('google'));
 
 app.get('/auth/google/return', 
-  passport.authenticate('google', { successRedirect: '/index',
+  passport.authenticate('google', { successRedirect: '/',
                                     failureRedirect: '/login' }));
 
 //renders the index page

@@ -38,7 +38,7 @@ var facebookStrategy= new FacebookStrategy({
 passport.use(facebookStrategy);
 
 passport.use(new GoogleStrategy({
-    returnURL: 'http://www.example.com/auth/google/return',
+    returnURL: 'http://fast-inlet-3968.herokuapp.com/trail-form',
     realm: 'http://fast-inlet-3968.herokuapp.com/facebook/callback'
   },
   function(identifier, profile, done) {

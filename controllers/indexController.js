@@ -26,8 +26,4 @@ var trailController = module.exports ={
 	});
 }
 
-
-
-
-
 };

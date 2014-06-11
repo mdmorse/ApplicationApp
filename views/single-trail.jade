@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    .logo-bar    
-        #logout-btn 
+    .logo-bar 
+         #logout-btn 
             a(href="/logout")
                 .btn.btn-default.pull-right logout
             .btn-group.pull-right#mobile-menu
@@ -11,15 +11,15 @@ block content
                 ul.dropdown-menu
                     li
                         a(href="/index") Home
-                        a(href="/trail-form") Add Trail
+                        a(href="/trail-form") Add Trails
                         a(href="/trails") View Trails
-                        a(href="/logout") Logout         
-        .img-wrapper
-            h1 
-                span#logo-slide Trail Log
-            h1
-                span#info-slide Add A Trail     
-            img#mountain-div(src='/images/mountains.jpg')
+                        a(href="/logout") Logout                 
+            .img-wrapper
+                h1
+                    span#logo-slide Trail Log
+                h1 
+                    span#info-slide= singleTrail.name 
+                img#mountain-div(src='/images/mountains.jpg')
 
     .btn-group.btn-group-justified       
         a.btn.btn-default(href= '/') Home

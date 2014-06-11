@@ -1,6 +1,7 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var util = require('util');
 var UserModel = require('../models/userModel');
 
 passport.serializeUser(function(user,done){
@@ -37,14 +38,24 @@ var facebookStrategy= new FacebookStrategy({
 });
 passport.use(facebookStrategy);
 
+var GOOGLE_CLIENT_ID = "682333433362-jdatul4o4orn5adiiit590p1ncf27va2.apps.googleusercontent.com";
+var GOOGLE_CLIENT_SECRET = "bY4eoyQxT-QulXNfzk1EMTon";
+
+
 passport.use(new GoogleStrategy({
-    consumerKey: '682333433362-jdatul4o4orn5adiiit590p1ncf27va2.apps.googleusercontent.com',
-    consumerSecret: 'bY4eoyQxT-QulXNfzk1EMTon',
-    callbackURL: "http://fast-inlet-3968.herokuapp.com/oauth2callback"
+    clientID: GOOGLE_CLIENT_ID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://fast-inlet-3968.herokuapp.com/google/callback"
   },
-  function(token, tokenSecret, profile, done) {
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      return done(err, user);
+  function(accessToken, refreshToken, profile, done) {
+    // asynchronous verification, for effect...
+    process.nextTick(function () {
+      
+      // To keep the example simple, the user's Google profile is returned to
+      // represent the logged-in user.  In a typical application, you would want
+      // to associate the Google account with a user record in your database,
+      // and return that user instead.
+      return done(null, profile);
     });
   }
 ));

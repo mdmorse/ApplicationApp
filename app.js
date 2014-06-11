@@ -13,6 +13,7 @@ var app = express();
 var passport = require('passport');
 var passportConfig = require('./config/passport');
 var mongoose = require('mongoose');
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');

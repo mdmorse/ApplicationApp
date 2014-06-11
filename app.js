@@ -77,7 +77,7 @@ app.get('/auth/google/callback',
 
 app.get('/logout', function(req, res){
   req.logout();
-  res.render('/index');
+  res.render('index.jade');
 });
 
 //renders the index page

@@ -38,23 +38,20 @@ var facebookStrategy= new FacebookStrategy({
 });
 passport.use(facebookStrategy);
 
+
 var GOOGLE_CLIENT_ID = "682333433362-jdatul4o4orn5adiiit590p1ncf27va2.apps.googleusercontent.com";
 var GOOGLE_CLIENT_SECRET = "bY4eoyQxT-QulXNfzk1EMTon";
-
 
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://fast-inlet-3968.herokuapp.com/google/callback"
+    callbackURL: "http://fast-inlet-3968.herokuapp.com/oauth2callback"
   },
   function(accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...
     process.nextTick(function () {
       
-      // To keep the example simple, the user's Google profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the Google account with a user record in your database,
-      // and return that user instead.
+     
       return done(null, profile);
     });
   }

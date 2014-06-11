@@ -38,6 +38,8 @@ if(global.process.env.MONGOHQ_URL){
 
 
 //****************Passport********************
+
+//facebook
 app.get('/', 
 	authController.ensureAuthenticated,
 	indexController.create
@@ -51,6 +53,12 @@ app.get(
 	passport.authenticate('facebook', {failureRedirect:'/login'}),
 	authController.loginSuccess
 );
+
+// google
+
+app.get('/auth/google/return', 
+  passport.authenticate('google', { successRedirect: '/',
+                                    failureRedirect: '/login' }));
 
 //renders the index page
 app.get('/',authController.ensureAuthenticated,function(req,res){

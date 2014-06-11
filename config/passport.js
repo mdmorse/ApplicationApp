@@ -1,5 +1,6 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
+var GoogleStrategy = require('passport-google').Strategy;
 var UserModel = require('../models/userModel');
 
 passport.serializeUser(function(user,done){
@@ -35,3 +36,14 @@ var facebookStrategy= new FacebookStrategy({
 	});
 });
 passport.use(facebookStrategy);
+
+passport.use(new GoogleStrategy({
+    returnURL: 'http://www.example.com/auth/google/return',
+    realm: 'http://fast-inlet-3968.herokuapp.com/facebook/callback'
+  },
+  function(identifier, profile, done) {
+    User.findOrCreate({ openId: identifier }, function(err, user) {
+      done(err, user);
+    });
+  }
+));

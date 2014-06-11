@@ -38,9 +38,9 @@ var facebookStrategy= new FacebookStrategy({
 passport.use(facebookStrategy);
 
 passport.use(new GoogleStrategy({
-    consumerKey: GOOGLE_CONSUMER_KEY,
-    consumerSecret: GOOGLE_CONSUMER_SECRET,
-    callbackURL: "http://fast-inlet-3968.herokuapp.com/google/callback"
+    consumerKey: 682333433362-jdatul4o4orn5adiiit590p1ncf27va2.apps.googleusercontent.com,
+    consumerSecret: bY4eoyQxT-QulXNfzk1EMTon,
+    callbackURL: "http://fast-inlet-3968.herokuapp.com/oauth2callback"
   },
   function(token, tokenSecret, profile, done) {
     User.findOrCreate({ googleId: profile.id }, function (err, user) {

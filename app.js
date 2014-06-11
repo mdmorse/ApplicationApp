@@ -57,14 +57,28 @@ app.get(
 
 // google
 app.get('/auth/google',
-  passport.authenticate('google', { scope: 'https://www.google.com/m8/feeds' }));
+  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/userinfo.profile',
+                                            'https://www.googleapis.com/auth/userinfo.email'] }),
+  function(req, res){
+    // The request will be redirected to Google for authentication, so this
+    // function will not be called.
+  });
 
+// GET /auth/google/callback
+//   Use passport.authenticate() as route middleware to authenticate the
+//   request.  If authentication fails, the user will be redirected back to the
+//   login page.  Otherwise, the primary route function function will be called,
+//   which, in this example, will redirect the user to the home page.
 app.get('/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
-    // Successful authentication, redirect home.
     res.redirect('/');
   });
+
+app.get('/logout', function(req, res){
+  req.logout();
+  res.render('/index');
+});
 
 //renders the index page
 app.get('/',authController.ensureAuthenticated,function(req,res){

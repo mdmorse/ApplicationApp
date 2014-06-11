@@ -1,15 +1,25 @@
 extends layout
 
 block content
-    .logo-bar 
-            //- #image-slide
-                img#hiker-image(src ='/images/bike-hike.svg')        
-            .img-wrapper
-                h1
-                    span#logo-slide Trail Log
-                h1 
-                    span#info-slide= singleTrail.name 
-                img#mountain-div(src='/images/mountains.jpg')
+    .logo-bar    
+        #logout-btn 
+            a(href="/logout")
+                .btn.btn-default.pull-right logout
+            .btn-group.pull-right#mobile-menu
+                button.btn.btn-default.dropdown-toggle(data-toggle="dropdown")
+                    .glyphicon.glyphicon-align-justify
+                ul.dropdown-menu
+                    li
+                        a(href="/index") home
+                        a(href="/trail-form") Add Trail
+                        a(href="/trails") View Trails
+                        a(href="/logout") Logout         
+        .img-wrapper
+            h1 
+                span#logo-slide Trail Log
+            h1
+                span#info-slide Add A Trail     
+            img#mountain-div(src='/images/mountains.jpg')
 
     .btn-group.btn-group-justified       
         a.btn.btn-default(href= '/') Home

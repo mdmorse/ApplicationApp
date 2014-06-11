@@ -58,7 +58,7 @@ app.get(
 app.get('/auth/google', passport.authenticate('google'));
 
 app.get('/auth/google/return', 
-  passport.authenticate('google', { successRedirect: '/',
+  passport.authenticate('google', { successRedirect: '/index.jade',
                                     failureRedirect: '/login' }));
 
 //renders the index page

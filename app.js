@@ -55,11 +55,15 @@ app.get(
 );
 
 // google
-app.get('/auth/google', passport.authenticate('google'));
+app.get('/auth/google',
+  passport.authenticate('google', { scope: 'https://www.google.com/m8/feeds' }));
 
-app.get('/auth/google/return', 
-  passport.authenticate('google', { successRedirect: '/index.jade',
-                                    failureRedirect: '/login' }));
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 
 //renders the index page
 app.get('/',authController.ensureAuthenticated,function(req,res){

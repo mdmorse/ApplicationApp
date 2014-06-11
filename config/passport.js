@@ -1,6 +1,6 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-var GoogleStrategy = require('passport-google').Strategy;
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 var UserModel = require('../models/userModel');
 
 passport.serializeUser(function(user,done){
@@ -38,12 +38,13 @@ var facebookStrategy= new FacebookStrategy({
 passport.use(facebookStrategy);
 
 passport.use(new GoogleStrategy({
-    returnURL: 'http://fast-inlet-3968.herokuapp.com/trail-form',
-    realm: 'http://fast-inlet-3968.herokuapp.com/facebook/callback'
+    consumerKey: GOOGLE_CONSUMER_KEY,
+    consumerSecret: GOOGLE_CONSUMER_SECRET,
+    callbackURL: "http://fast-inlet-3968.herokuapp.com/google/callback"
   },
-  function(identifier, profile, done) {
-    User.findOrCreate({ openId: identifier }, function(err, user) {
-      done(err, user);
+  function(token, tokenSecret, profile, done) {
+    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      return done(err, user);
     });
   }
 ));
